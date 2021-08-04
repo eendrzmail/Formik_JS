@@ -1,10 +1,10 @@
 import React from 'react'
 import { useField, Form, FormikProps, Formik } from 'formik';
-import { Label } from './Label'
-import { Input } from './Input'
-import { ErrorLabel } from './ErrorLabel'
-import { FormField } from './FormField';
-import { Dropdown } from './Dropdown';
+import { Label } from '../StyledComponents/Label'
+import { Input } from '../StyledComponents/Input'
+import { ErrorLabel } from '../StyledComponents/ErrorLabel'
+import { FormField } from '../StyledComponents/FormField';
+import { Dropdown } from '../StyledComponents/Dropdown';
 
 export default function DropdownComponent({ label, optionArray, ...props}) {
     const [field, meta, helpers] = useField(props);

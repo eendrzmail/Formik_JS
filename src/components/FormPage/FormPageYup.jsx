@@ -3,14 +3,13 @@ import { useFormik, Formik, Form, useField } from "formik";
 import * as Yup from 'yup'
 
 import './FormPage.css'
-import { FormField } from '../FormComponents/FormField'
-import { Input } from '../FormComponents/Input'
-import { ErrorLabel } from '../FormComponents/ErrorLabel'
-import { Label } from '../FormComponents/Label'
-import { Dropdown } from '../FormComponents/Dropdown'
-import { Button } from '../FormComponents/Button'
-import { Section } from '../FormComponents/Section'
-import InputComponent from '../FormComponents/InputComponent'
+import { FormField } from '../StyledComponents/FormField'
+import { Input } from '../StyledComponents/Input'
+import { ErrorLabel } from '../StyledComponents/ErrorLabel'
+import { Label } from '../StyledComponents/Label'
+import { Dropdown } from '../StyledComponents/Dropdown'
+import { Button } from '../StyledComponents/Button'
+import { Section } from '../StyledComponents/Section'
 
 const MySpecialField = () => {
     const [field] = useField("testval");

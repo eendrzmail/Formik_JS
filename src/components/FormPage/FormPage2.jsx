@@ -1,15 +1,12 @@
 import { useField, Form, FormikProps, Formik } from 'formik';
 import React from 'react'
-import InputComponent from '../FormComponents/InputComponent';
 import * as Yup from 'yup'
 
 import './FormPage.css'
-import { Dropdown } from '../FormComponents/Dropdown';
-import { Label } from '../FormComponents/Label';
-import { FormField } from '../FormComponents/FormField';
-import { Button } from '../FormComponents/Button';
-import { Section } from '../FormComponents/Section';
+import { Button } from '../StyledComponents/Button';
+import { Section } from '../StyledComponents/Section';
 
+import InputComponent from '../FormComponents/InputComponent';
 import DropdownComponent from '../FormComponents/DropdownComponent';
 import DatePickerComponent from '../FormComponents/DatePickerComponent';
 
@@ -62,7 +59,7 @@ export default function FormPage2() {
 
                     <InputComponent name="confirmPassword" type="confirmPassword" label="confirmPassword" />
 
-                    <DropdownComponent name="role" label="Dole" optionArray={["Admin","User"]}></DropdownComponent>
+                    <DropdownComponent name="role" label="Role" optionArray={["Admin","User"]}></DropdownComponent>
 
                     <DatePickerComponent name="date" label = "Date"></DatePickerComponent>
 

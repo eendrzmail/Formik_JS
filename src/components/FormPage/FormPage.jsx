@@ -2,12 +2,12 @@ import React from 'react'
 import { useFormik } from 'formik'
 
 import './FormPage.css'
-import { FormField } from '../FormComponents/FormField'
-import { Input } from '../FormComponents/Input'
-import { ErrorLabel } from '../FormComponents/ErrorLabel'
-import { Label } from '../FormComponents/Label'
-import { Dropdown } from '../FormComponents/Dropdown'
-import { Button } from '../FormComponents/Button'
+import { FormField } from '../StyledComponents/FormField'
+import { Input } from '../StyledComponents/Input'
+import { ErrorLabel } from '../StyledComponents/ErrorLabel'
+import { Label } from '../StyledComponents/Label'
+import { Dropdown } from '../StyledComponents/Dropdown'
+import { Button } from '../StyledComponents/Button'
 
 const validate = values => {
     const errors = {};

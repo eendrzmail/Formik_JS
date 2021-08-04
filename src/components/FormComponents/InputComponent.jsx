@@ -1,9 +1,9 @@
 import React from 'react'
 import { useField, Form, FormikProps, Formik } from 'formik';
-import { Label } from './Label'
-import { Input } from './Input'
-import { ErrorLabel } from './ErrorLabel'
-import { FormField } from './FormField';
+import { Label } from '../StyledComponents/Label'
+import { Input } from '../StyledComponents/Input'
+import { ErrorLabel } from '../StyledComponents/ErrorLabel'
+import { FormField } from '../StyledComponents/FormField';
 
 export default function InputComponent({ label, ...props }) {
     const [field, meta, helpers] = useField(props);
