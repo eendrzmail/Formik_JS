@@ -1,0 +1,22 @@
+.registerForm {
+  width:40%;
+  background-color:white;
+  box-sizing: border-box;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  box-shadow: 1px 1px 5px rgb(59, 59, 59);
+}
+
+.spacer{
+  height:70px;
+  background-color:#3d5afe;
+  border-radius: 10px 10px 0 0;
+  color:white;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.7rem;
+  font-weight: bold;
+}
