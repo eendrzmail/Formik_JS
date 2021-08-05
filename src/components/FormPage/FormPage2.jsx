@@ -9,20 +9,27 @@ import { Section } from '../StyledComponents/Section';
 import InputComponent from '../FormComponents/InputComponent';
 import DropdownComponent from '../FormComponents/DropdownComponent';
 import DatePickerComponent from '../FormComponents/DatePickerComponent';
+import ReactDatePickerComponent from '../FormComponents/ReactDatePickerComponent';
+import CheckboxComponent from '../FormComponents/CheckboxComponent';
 
 export default function FormPage2() {
+
     return (
         <Section>
 
             <Formik
+                enableReinitialize={true}
                 initialValues={{
                     firstName: '',
                     lastName: '',
                     password: '',
                     confirmPassword: '',
                     email: '',
-                    role: "Admin",
-                    date: ''
+                    role: "User",
+                    date: '',
+                    rectDatePicker: '',
+                    toggle: false,
+                    checked: []
                 }}
                 validationSchema={Yup.object({
                     firstName: Yup.string()
@@ -38,34 +45,54 @@ export default function FormPage2() {
                         .required('Required'),
                     email: Yup.string().email()
                         .required('Required'),
+                    role: Yup.string()
+                        .required(),
                     date: Yup.date()
                         .required("Required")
-                })}     
+                })}
                 onSubmit={async (values) => {
                     await new Promise((r) => setTimeout(r, 100));
                     alert(JSON.stringify(values, null, 2));
                 }}
             >
-                <Form className="registerForm">
-                    <div className="spacer">Register</div>
+                {({ values, setFieldValue }) => (
 
-                    <InputComponent name="firstName" type="text" label="firstName" />
-                    
-                    <InputComponent name="lastName" type="text" label="lastName" />
-                    
-                    <InputComponent name="email" type="text" label="email" />
-                    
-                    <InputComponent name="password" type="password" label="password" />
+                    <Form className="registerForm">
+                        <div className="spacer">Register</div>
 
-                    <InputComponent name="confirmPassword" type="confirmPassword" label="confirmPassword" />
+                        <InputComponent name="firstName" type="text" label="First Name" />
 
-                    <DropdownComponent name="role" label="Role" optionArray={["Admin","User"]}></DropdownComponent>
+                        <InputComponent name="lastName" type="text" label="Last Name" />
 
-                    <DatePickerComponent name="date" label = "Date"></DatePickerComponent>
+                        <InputComponent name="email" type="text" label="Email" />
 
-                    <Button type="submit">Login</Button>
+                        <InputComponent name="password" type="password" label="Password" />
 
-                </Form>
+                        <InputComponent name="confirmPassword" type="confirmPassword" label="Confirm Password" />
+
+                        <DropdownComponent name="role" label="Role" optionArray={["Admin", "User"]}></DropdownComponent>
+
+                        <DatePickerComponent name="date" label="Date"></DatePickerComponent>
+
+                        <ReactDatePickerComponent label="React Datepicker" name="rectDatePicker"></ReactDatePickerComponent>
+
+
+                        <CheckboxComponent label="Togglebox" name="toggle"></CheckboxComponent>
+
+                        <hr/>
+
+                        <CheckboxComponent label="A" name="checked"></CheckboxComponent>
+                        <CheckboxComponent label="B" name="checked"></CheckboxComponent>
+                        <CheckboxComponent label="C" name="checked"></CheckboxComponent>
+
+                        <Button type="submit">Login</Button>
+
+                        <pre>
+                            {JSON.stringify(values, null, 2)}
+                        </pre>
+
+                    </Form>
+                )}
 
             </Formik>
         </Section>
