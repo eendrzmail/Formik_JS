@@ -1,31 +1,15 @@
-import React from 'react'
-import { useField, Form, FormikProps, Formik } from 'formik';
-import { Input } from '../StyledComponents/Input';
-import InputComponent from './InputComponent';
-import { Label } from '../StyledComponents/Label';
-import { FormField } from '../StyledComponents/FormField';
-
+import React from 'react';
+import { useField } from 'formik';
 
 export default function CheckboxComponent({ label, ...props }) {
-    const [field, meta, helpers] = useField(props);
+    const [field, meta] = useField(props);
 
-
-    if (Array.isArray(meta.initialValue)){
-        return (
-            <div>
-                <label htmlFor={label}>{label}</label>
-                <input type="checkbox" {...field} {...props} value={label} />
-            </div>
-        )
-    }
-    else{
-        return (
-            <div>
-                <label htmlFor={label}>{label}
-                    <input type="checkbox" {...field} {...props}/>
-                </label>
-            </div>
-        )
-    }
-
+    return (
+        <div>
+            <label htmlFor={label}>{label}</label>
+            {Array.isArray(meta.initialValue)
+                ? <input type="checkbox" {...field} {...props} value={label} />
+                : <input type="checkbox" {...field} {...props} />}
+        </div>
+    );
 }

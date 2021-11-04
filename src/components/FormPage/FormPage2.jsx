@@ -1,4 +1,4 @@
-import { useField, Form, FormikProps, Formik } from 'formik';
+import { Form, Formik } from 'formik';
 import React from 'react'
 import * as Yup from 'yup'
 
@@ -27,7 +27,7 @@ export default function FormPage2() {
                     email: '',
                     role: "User",
                     date: '',
-                    rectDatePicker: '',
+                    rectDatePicker: new Date(),
                     toggle: false,
                     checked: []
                 }}

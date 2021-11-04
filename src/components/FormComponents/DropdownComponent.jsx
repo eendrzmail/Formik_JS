@@ -5,7 +5,7 @@ import { ErrorLabel } from '../StyledComponents/ErrorLabel'
 import { FormField } from '../StyledComponents/FormField';
 import { Dropdown } from '../StyledComponents/Dropdown';
 
-export default function DropdownComponent({ label, optionArray, ...props}) {
+export default function DropdownComponent({ label, optionArray, ...props }) {
     const [field, meta, helpers] = useField(props);
     return (
         <FormField>

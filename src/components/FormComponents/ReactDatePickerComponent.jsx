@@ -1,29 +1,25 @@
 import React from 'react'
-import { useField, Form, FormikProps, Formik } from 'formik';
+import { useField } from 'formik';
 import { Label } from '../StyledComponents/Label'
 import { ErrorLabel } from '../StyledComponents/ErrorLabel'
-import { useState } from 'react';
 import 'react-datepicker/dist/react-datepicker.css';
 import DatePicker, { registerLocale } from "react-datepicker";
 import pl from 'date-fns/locale/pl'
-
-
+registerLocale("pl", pl)
 
 export default function ReactDatePickerComponent({ label, ...props }) {
-    registerLocale("pl", pl)
     const [field, meta, helpers] = useField(props)
-    const [startDate, setStartDate] = useState(new Date());
+    // const [startDate, setStartDate] = useState(field.value);
 
     return (
         <div>
             <DatePicker
                 dateFormat="dd-MM-yyyy"
-                selected={startDate}
-                value={startDate}
+                selected={field.value}
+                value={field.value}
 
                 onChange={(date) => {
-                    setStartDate(date)
-                    helpers.setValue(date.toISOString().split('T')[0])
+                    helpers.setValue(date)
                 }}
 
             />
